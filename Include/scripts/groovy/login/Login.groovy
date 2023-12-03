@@ -44,7 +44,7 @@ public class Login {
 		WebUI.verifyElementPresent(findTestObject('Object Repository/Login/h2_Login'),0)
 	}
 
-	@When("User enters valid (.*) and (.*)")
+	@When("User enters (.*) and (.*)")
 	def enterValidCredentials(String userName, String password){
 		WebUI.setText(findTestObject('Object Repository/Login/input_Username_username'),userName)
 		WebUI.setEncryptedText(findTestObject('Object Repository/Login/input_Password_password'), password)
@@ -58,6 +58,12 @@ public class Login {
 	@Then ("User should be navigated to the Appointment Homepage")
 	def verifyAppointmentPage() {
 		WebUI.verifyElementPresent(findTestObject('Object Repository/Login/h2_Make Appointment'),0)
+		WebUI.closeBrowser()
+	}
+	
+	@Then("Error message should appear")
+	def verifyErrorMessage() {
+		WebUI.verifyElementPresent(findTestObject('Object Repository/Login/LoginErrorMessage'),0)
 		WebUI.closeBrowser()
 	}
 }

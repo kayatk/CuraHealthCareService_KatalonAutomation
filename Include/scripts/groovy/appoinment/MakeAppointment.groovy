@@ -35,39 +35,38 @@ public class MakeAppointment {
 		WebUI.setEncryptedText(findTestObject('Object Repository/Login/input_Password_password'), password)
 		WebUI.click(findTestObject('Object Repository/Login/button_Login'))
 		WebUI.verifyElementPresent(findTestObject('Object Repository/Login/h2_Make Appointment'),0)
-		
 	}
-	
-	@When ("User selects (.*)") 
+
+	@When ("User selects (.*)")
 	def selectFacility(String facility) {
 		WebUI.selectOptionByValue(findTestObject('Object Repository/Appointment/select_Tokyo CURA Healthcare Center        _5b4107'),
-			facility, true)
+				facility, true)
 	}
-	
+
 	@And("Selects healthcare (.*)")
 	def selectsHealthcareProgram(String program) {
 		WebUI.click(findTestObject('Object Repository/Appointment/input_'+program+'_programs'))
 	}
-	 
-	@And("Select a (.*) to the Appointment") 
+
+	@And("Select a (.*) to the Appointment")
 	def selectAppointmentDate(String date) {
-		WebUI.setText(findTestObject('Object Repository/Test/Page_CURA Healthcare Service/input_Visit Date (Required)_visit_date'), 
-    date)
+		WebUI.setText(findTestObject('Object Repository/Test/Page_CURA Healthcare Service/input_Visit Date (Required)_visit_date'),
+				date)
 	}
-	
+
 	@And ("enter (.*)")
 	def enterComments(String comments) {
 		WebUI.setText(findTestObject('Object Repository/Appointment/textarea_Comment_comment'), comments)
 	}
-	
+
 	@And("Click on book Appointment button")
 	def clickAppointmentButton() {
 		WebUI.click(findTestObject('Object Repository/Appointment/button_Book Appointment'))
 	}
-	
+
 	@Then ("Appointment Confirmation message should appear")
-     def verifyConfirmationMessage() {
-		 WebUI.click(findTestObject('Object Repository/Appointment/h2_Appointment Confirmation'))
-		 WebUI.closeBrowser()
-	 }
+	def verifyConfirmationMessage() {
+		WebUI.click(findTestObject('Object Repository/Appointment/h2_Appointment Confirmation'))
+		WebUI.closeBrowser()
+	}
 }
