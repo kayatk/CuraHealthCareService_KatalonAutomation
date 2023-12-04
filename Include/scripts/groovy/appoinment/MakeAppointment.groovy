@@ -39,7 +39,7 @@ public class MakeAppointment {
 
 	@When ("User selects (.*)")
 	def selectFacility(String facility) {
-		WebUI.selectOptionByValue(findTestObject('Object Repository/Appointment/select_Tokyo CURA Healthcare Center        _5b4107'),
+		WebUI.selectOptionByValue(findTestObject('Object Repository/Appointment/facility'),
 				facility, true)
 	}
 
@@ -50,8 +50,8 @@ public class MakeAppointment {
 
 	@And("Select a (.*) to the Appointment")
 	def selectAppointmentDate(String date) {
-
-		WebUI.setText(findTestObject('Object Repository/Test/Page_CURA Healthcare Service/input_Visit Date (Required)_visit_date'),
+        //WebUI.waitForElementClickable('Object Repository/Appointment/input_Visit Date (Required)_visit_date', 30)
+		WebUI.setText(findTestObject('Object Repository/Appointment/visitDate'),
 				date)
 	}
 
