@@ -19,3 +19,5 @@ import org.openqa.selenium.Keys as Keys
 
 CucumberKW.runFeatureFile('Include/features/Login/Login.feature')
 
+CucumberKW.runFeatureFile('Include/features/Appoinment/MakeAppointment.feature')
+

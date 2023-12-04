@@ -50,6 +50,7 @@ public class MakeAppointment {
 
 	@And("Select a (.*) to the Appointment")
 	def selectAppointmentDate(String date) {
+
 		WebUI.setText(findTestObject('Object Repository/Test/Page_CURA Healthcare Service/input_Visit Date (Required)_visit_date'),
 				date)
 	}
