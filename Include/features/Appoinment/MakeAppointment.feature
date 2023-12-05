@@ -8,6 +8,7 @@ And Select a <date> to the Appointment
 And enter <comments> 
 And Click on book Appointment button
 Then Appointment Confirmation message should appear
+And close the browser
 
 
 Examples: 

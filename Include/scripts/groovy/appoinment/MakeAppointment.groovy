@@ -50,7 +50,7 @@ public class MakeAppointment {
 
 	@And("Select a (.*) to the Appointment")
 	def selectAppointmentDate(String date) {
-        //WebUI.waitForElementClickable('Object Repository/Appointment/input_Visit Date (Required)_visit_date', 30)
+		//WebUI.waitForElementClickable('Object Repository/Appointment/input_Visit Date (Required)_visit_date', 30)
 		WebUI.setText(findTestObject('Object Repository/Appointment/visitDate'),
 				date)
 	}
@@ -68,6 +68,5 @@ public class MakeAppointment {
 	@Then ("Appointment Confirmation message should appear")
 	def verifyConfirmationMessage() {
 		WebUI.click(findTestObject('Object Repository/Appointment/h2_Appointment Confirmation'))
-		WebUI.closeBrowser()
 	}
 }

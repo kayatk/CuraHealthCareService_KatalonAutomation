@@ -7,6 +7,7 @@ Then User should navigiates to Login Page
 When User enters <userName> and <password>
 And User clicks on Login button
 Then User should be navigated to the Appointment Homepage
+And close the browser
 
 Examples: 
 
@@ -23,6 +24,7 @@ Then User should navigiates to Login Page
 When User enters <userName> and <password>
 And User clicks on Login button
 Then Error message should appear 
+And close the browser
 
 Examples: 
 

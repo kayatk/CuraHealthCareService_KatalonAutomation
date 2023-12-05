@@ -58,12 +58,10 @@ public class Login {
 	@Then ("User should be navigated to the Appointment Homepage")
 	def verifyAppointmentPage() {
 		WebUI.verifyElementPresent(findTestObject('Object Repository/Login/h2_Make Appointment'),0)
-		WebUI.closeBrowser()
 	}
 
 	@Then("Error message should appear")
 	def verifyErrorMessage() {
 		WebUI.verifyElementPresent(findTestObject('Object Repository/Login/LoginErrorMessage'),0)
-		WebUI.closeBrowser()
 	}
 }
