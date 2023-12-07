@@ -25,22 +25,22 @@ import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
 public class menu {
-	
-	@When("User clicks on Side Menu") 
+
+	@When("User clicks on Side Menu")
 	def clickOnMenu() {
 		WebUI.click(findTestObject('Object Repository/Sidemenu/a_CURA Healthcare_menu-toggle'))
 	}
-	
+
 	@And("Click on the (.*)")
 	def clickOnOption(String option) {
 		WebUI.click(findTestObject('Object Repository/Sidemenu/a_'+option ))
 	}
-	
+
 	@Then ("User should navigate to respective page (.*)")
 	def verifyNavigatedPage(String option) {
 		WebUI.verifyElementPresent(findTestObject('Object Repository/Login/'+option),0)
 	}
-	
+
 	@And ("close the browser")
 	def closeBrowser() {
 		WebUI.closeBrowser()
